@@ -1,5 +1,5 @@
 const CACHE_NAME = "pwa-cache-v1";
-const urlsToCache = ["/", "/offline.html"];
+const urlsToCache = ["/", "/login", "/register", "/dashboard"];
 
 // Install Service Worker
 self.addEventListener("install", (event) => {

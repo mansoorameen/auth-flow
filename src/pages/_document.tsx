@@ -16,8 +16,8 @@ export default function Document() {
         />
 
         {/* Icons */}
-        <link rel="icon" href="/icons/favicon.svg" sizes="192x192" />
-        <link rel="icon" href="/icons/favicon.svg" sizes="512x512" />
+        <link rel="icon" href="/icons/lock-192.png" sizes="192x192" />
+        <link rel="icon" href="/icons/lock-512.png" sizes="512x512" />
       </Head>
       <body>
         <Main />

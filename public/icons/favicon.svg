@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Simplified design for favicon -->
-  <rect width="32" height="32" fill="#4F46E5" rx="6"/>
-  <path d="M16 8c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 2.5c3 0 5.5 2.5 5.5 5.5s-2.5 5.5-5.5 5.5-5.5-2.5-5.5-5.5 2.5-5.5 5.5-5.5z" fill="white"/>
-  <circle cx="16" cy="9.5" r="1.5" fill="white"/>
-</svg>

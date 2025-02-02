@@ -1,5 +1,11 @@
 const CACHE_NAME = "pwa-cache-v1";
-const urlsToCache = ["/", "/login", "/register", "/dashboard"];
+const urlsToCache = [
+  "/",
+  "/login",
+  "/register",
+  "/dashboard",
+  "/icons/lock-192.png",
+];
 
 // Install Service Worker
 self.addEventListener("install", (event) => {
@@ -29,12 +35,19 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Fetch Event (Serve from Cache if Offline)
+// Fetch Event (Serve Cached Assets When Offline)
 self.addEventListener("fetch", (event) => {
   console.log("Fetching:", event.request.url);
+
+  // If the requested resource is in cache, serve it; otherwise, fetch from network
   event.respondWith(
-    fetch(event.request).catch(() => {
-      return caches.match("/offline.html");
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse; // Return cached content if available
+      }
+
+      // If the resource is not cached, try fetching from the network
+      return fetch(event.request);
     })
   );
 });

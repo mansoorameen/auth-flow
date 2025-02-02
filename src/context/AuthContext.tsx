@@ -26,7 +26,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!router.isReady) return;
-    console.log("hellooo");
 
     const storedUsers = localStorage.getItem("users");
     if (storedUsers) {

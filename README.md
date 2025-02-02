@@ -1,9 +1,14 @@
 ## User Auth Flow - NextJS, TypeScript, Jest, PWA
 -Login, Register, Logout and Dashboard - all minimal
+
 -No duplicate user registration
+
 -Admin can see all registered users
+
 -Auth cofigured using context and local storage
+
 -Responsive
+
 -Application installable as PWA (service workers)
 
 

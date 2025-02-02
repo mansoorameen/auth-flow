@@ -28,10 +28,10 @@ describe("Register", () => {
 
     render(<Register />);
 
-    fireEvent.change(screen.getByPlaceholderText("Username"), {
+    fireEvent.change(screen.getByLabelText("Username"), {
       target: { value: "admin" },
     });
-    fireEvent.change(screen.getByPlaceholderText("Password"), {
+    fireEvent.change(screen.getByLabelText("Password"), {
       target: { value: "admin" },
     });
     fireEvent.click(screen.getByText("Register"));
@@ -48,10 +48,10 @@ describe("Register", () => {
     (useAuth as jest.Mock).mockReturnValue({ register: mockRegister });
     render(<Register />);
 
-    fireEvent.change(screen.getByPlaceholderText("Username"), {
+    fireEvent.change(screen.getByLabelText("Username"), {
       target: { value: "newuser" },
     });
-    fireEvent.change(screen.getByPlaceholderText("Password"), {
+    fireEvent.change(screen.getByLabelText("Password"), {
       target: { value: "newpassword" },
     });
     fireEvent.click(screen.getByText("Register"));

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 interface User {
@@ -21,11 +22,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     { username: "admin", password: "admin" },
   ]);
 
+  const router = useRouter();
+
   useEffect(() => {
+    if (!router.isReady) return;
+    console.log("hellooo");
+
     const storedUsers = localStorage.getItem("users");
     if (storedUsers) {
       setUsers(JSON.parse(storedUsers));
     }
+
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+      router.push("/dashboard");
+    } else router.push("/login");
   }, []);
 
   const login = (username: string, password: string) => {
@@ -34,6 +46,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     );
     if (foundUser) {
       setUser(foundUser);
+      localStorage.setItem("user", JSON.stringify(foundUser));
       return true;
     }
     return false;
@@ -41,6 +54,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const logout = () => {
     setUser(null);
+    localStorage.removeItem("user");
+    router.push("/login");
   };
 
   const register = (username: string, password: string) => {

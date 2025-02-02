@@ -19,26 +19,44 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-md">
-        <h2 className="text-2xl font-bold mb-4 text-blue-500 ">LOGIN</h2>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="w-full p-2 mb-4 border rounded"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-2 mb-4 border rounded"
-        />
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+      <form
+        onSubmit={handleSubmit}
+        className="p-6 bg-white rounded border border-gray-300 shadow-md max-w-md w-full"
+      >
+        <h2 className="text-2xl font-bold mb-4 text-blue-600">LOGIN</h2>
+
+        <div className="w-full mb-4 flex flex-col">
+          <label htmlFor="username" className="text-gray-700 font-medium">
+            Username
+          </label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full p-2 border rounded"
+          />
+        </div>
+
+        <div className="w-full mb-4 flex flex-col">
+          <label htmlFor="password" className="text-gray-700 font-medium">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        </div>
+
         <button
           type="submit"
-          className="w-full p-2 bg-blue-500 text-white rounded"
+          className="w-full p-2 bg-blue-600 text-white rounded"
         >
           Login
         </button>
@@ -48,13 +66,12 @@ export default function Login() {
           <button
             type="button"
             onClick={() => router.push("/register")} // Replace with your registration route
-            className="text-blue-500 hover:underline"
+            className="text-blue-600 hover:text-blue-700 hover:underline"
           >
             Register
           </button>
         </div>
       </form>
-      <span></span>
     </div>
   );
 }

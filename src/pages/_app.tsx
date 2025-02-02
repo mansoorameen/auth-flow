@@ -6,6 +6,8 @@ import { Toaster } from "react-hot-toast";
 import React, { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  console.log("logs in app");
+
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker

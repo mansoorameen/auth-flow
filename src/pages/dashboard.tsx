@@ -1,16 +1,8 @@
 import { useAuth } from "@/context/AuthContext";
-import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function Dashboard() {
   const { user, logout, users } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!user) {
-      router.push("/login");
-    }
-  }, [user, router]);
 
   if (!user) {
     return null;
@@ -24,8 +16,8 @@ export default function Dashboard() {
           <div>
             <h2 className="text-xl font-bold mb-2">Registered Users</h2>
             <ul>
-              {users.map((u, index) => (
-                <li key={index} className="mb-2">
+              {users.map((u) => (
+                <li key={u.username} className="mb-2">
                   {u.username}
                 </li>
               ))}

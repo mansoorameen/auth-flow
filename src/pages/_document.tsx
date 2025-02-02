@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         {/* Link to the Web App Manifest */}
         <link rel="manifest" href="/manifest.json" />

@@ -33,8 +33,9 @@
     "**/*.tsx",
     "src/**/*.ts",
     "src/**/*.tsx"
-  ],
+ ],
   "exclude": [
     "node_modules"
   ]
 }
+//  "jest.config.js", "babel.config.js", "jest.setup.js", "jest.config.js"

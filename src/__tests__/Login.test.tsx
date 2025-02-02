@@ -30,10 +30,10 @@ describe("Login", () => {
 
     render(<Login />);
 
-    fireEvent.change(screen.getByPlaceholderText("Username"), {
+    fireEvent.change(screen.getByLabelText("Username"), {
       target: { value: "wronguser" },
     });
-    fireEvent.change(screen.getByPlaceholderText("Password"), {
+    fireEvent.change(screen.getByLabelText("Password"), {
       target: { value: "wrongpassword" },
     });
     fireEvent.click(screen.getByText("Login"));
@@ -47,10 +47,10 @@ describe("Login", () => {
 
     render(<Login />);
 
-    fireEvent.change(screen.getByPlaceholderText("Username"), {
+    fireEvent.change(screen.getByLabelText("Username"), {
       target: { value: "admin" },
     });
-    fireEvent.change(screen.getByPlaceholderText("Password"), {
+    fireEvent.change(screen.getByLabelText("Password"), {
       target: { value: "admin" },
     });
     fireEvent.click(screen.getByText("Login"));
